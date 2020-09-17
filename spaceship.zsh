@@ -61,6 +61,7 @@ if [ -z "$SPACESHIP_PROMPT_ORDER" ]; then
     docker        # Docker section
     aws           # Amazon Web Services section
     gcloud        # Google Cloud Platform section
+    poetry        # Poetry section
     venv          # virtualenv section
     conda         # conda virtualenv section
     pyenv         # Pyenv section
