@@ -27,9 +27,9 @@ spaceship_poetry() {
 
   spaceship::exists poetry || return # Do nothing if poetry is not installed
 
-  local poetry_env_path=$(poetry env info -p 2>/dev/null)
+  poetry env info -p >/dev/null 2>&1  # Dislike how I have to do this twice but my zsh isn't strong
   [[ $? -ne 0 ]] && return
-  local poetry_status=$(echo $test | rev | cut -d '-' -f 1 | rev | sed s/py//)
+  local poetry_status=$(poetry env info -p | rev | cut -d '-' -f 1 | rev | sed s/py//)
 
   spaceship::section \
     "$SPACESHIP_POETRY_COLOR" \
